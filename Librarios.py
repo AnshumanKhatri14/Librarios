@@ -3,8 +3,6 @@ from datetime import datetime
 
 from funcs import *
 
-greet()
-
 # CONNECTION
 db = mysql.connector.connect(host="localhost",
                             user="root",
@@ -26,6 +24,8 @@ if db.is_connected():
 
 else:
     print("\nCouldn't connect to database, Try again...")
+
+greet()
 
 def men():
     inp=input("\nEnter 'm' for menu or press enter to exit program : ")
