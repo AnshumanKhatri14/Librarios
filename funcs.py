@@ -18,12 +18,11 @@ def getp():
     rphno=input("\nEnter the phone number of person : ")
     return rphno
     
-# VARIABLES 
+# VARIABLES
+
 usern= input("Enter your MySql username : ")
 
 pwd = input("Enter your password to continue : ") 
-
-
 
 val_entry = "INSERT INTO library (issued_on, name, book, phone_no) VALUES (%s, %s, %s, %s)"
 sel_all = "SELECT * FROM library"
