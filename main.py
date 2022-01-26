@@ -5,7 +5,7 @@ from funcs import *
 
 # CONNECTION
 db = mysql.connector.connect(host="localhost",
-                            user="root",
+                            user=usern,
                             password=pwd,
                             database="Librarios"                           
                             )

@@ -19,8 +19,11 @@ def getp():
     return rphno
     
 # VARIABLES 
+usern= input("Enter your MySql username : ")
 
-pwd = input("Enter your MySql password to continue : ") 
+pwd = input("Enter your password to continue : ") 
+
+
 
 val_entry = "INSERT INTO library (issued_on, name, book, phone_no) VALUES (%s, %s, %s, %s)"
 sel_all = "SELECT * FROM library"
