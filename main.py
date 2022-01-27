@@ -7,7 +7,8 @@ from funcs import *
 db = mysql.connector.connect(host="localhost",
                             user=usern,
                             passwd=pwd,
-                            database="Librarios"                           
+                            database="Librarios"
+                             auth_plugin='mysql_native_password',
                             )
 
 mycursor=db.cursor()
@@ -68,8 +69,8 @@ Enter the number corresponding to action you want to perform :
         mycursor.execute(sel_all)
         for row in mycursor:
             print("-----------------------\n          Id : ",row[0], "\n   Issued on : ",row[1], "\n        Name : ",row[2], "\n        Book : ",row[3], "\nPhone Number : ",row[4] )
-        opt=input('''\nEnter p to view phone number of customer 
-                     \nEnter b to view book issued to customer 
+        opt=input('''\nEnter p to view phone number of person 
+                     \nEnter b to view book issued to person
 \n -----> ''')
 
         if opt.lower( ) == 'p':
