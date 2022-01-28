@@ -16,7 +16,7 @@ mycursor=db.cursor()
 
 mycursor.execute("CREATE DATABASE IF NOT EXISTS Librarios")
 
-mycursor.execute("Create table if not exists library (id int PRIMARY KEY AUTO_INCREMENT,"
+mycursor.execute("CREATE TABLE IF NOT EXISTS library (id int PRIMARY KEY AUTO_INCREMENT,"
                 "issued_on datetime NOT NULL, name varchar(40), book varchar(50), phone_no int(15) UNSIGNED )")
 
 if db.is_connected():
