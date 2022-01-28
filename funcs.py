@@ -3,8 +3,8 @@
 # FUNCS 
 
 def greet():
-    print('''\n ---------------WELCOME TO LIBRARIOS ----------------
-           \n       Your personal Library Management System''')
+    print('''\n -------------------WELCOME TO LIBRARIOS --------------------
+           \n           Your personal Library Management System''')
 
 def getn():
     rname=input("\nEnter the name of person : ")

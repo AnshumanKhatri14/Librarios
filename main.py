@@ -7,8 +7,7 @@ from funcs import *
 db = mysql.connector.connect(host="localhost",
                             user=usern,
                             passwd=pwd,
-                            database="Librarios"
-                             auth_plugin='mysql_native_password',
+                            database="Librarios",
                             )
 
 mycursor=db.cursor()
@@ -50,7 +49,7 @@ Enter the number corresponding to action you want to perform :
     \n4. To delete any entry
     \n0. To exit the program
     
-    ''')
+ ---> ''')
 
     # Adding values
 
@@ -68,10 +67,10 @@ Enter the number corresponding to action you want to perform :
     elif act == '2':
         mycursor.execute(sel_all)
         for row in mycursor:
-            print("-----------------------\n          Id : ",row[0], "\n   Issued on : ",row[1], "\n        Name : ",row[2], "\n        Book : ",row[3], "\nPhone Number : ",row[4] )
-        opt=input('''\nEnter p to view phone number of person 
-                     \nEnter b to view book issued to person
-\n -----> ''')
+            print("\n---------------------------------\n          Id : ",row[0], "\n   Issued on : ",row[1], "\n        Name : ",row[2], "\n        Book : ",row[3], "\nPhone Number : ",row[4] )
+        opt=input('''\nEnter 'p' to view phone number of person 
+                     \nEnter 'b' to view book issued to person
+\n ---> ''')
 
         if opt.lower( ) == 'p':
             choicn=input("\nEnter name of person you wanna view phone number of : ")
@@ -106,9 +105,9 @@ Enter the number corresponding to action you want to perform :
     # Editing entered data
 
     elif act == '3':
-        opt=input('''\nEnter p to edit phone number of customer 
-                     \nEnter b to edit book issued to customer 
-\n -----> ''') 
+        opt=input('''\nEnter 'p' to edit phone number of customer 
+                     \nEnter 'b' to edit book issued to customer 
+\n ---> ''') 
         if opt.lower() == 'p':
             choicn=input("\nEnter name of person you wanna edit phone number of : ")
             mycursor.execute(f'''SELECT EXISTS(SELECT * FROM library WHERE name="{choicn}")''')
