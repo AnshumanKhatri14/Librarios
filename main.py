@@ -105,8 +105,8 @@ Enter the number corresponding to action you want to perform :
     # Editing entered data
 
     elif act == '3':
-        opt=input('''\nEnter 'p' to edit phone number of customer 
-                     \nEnter 'b' to edit book issued to customer 
+        opt=input('''\nEnter 'p' to edit phone number of person 
+                     \nEnter 'b' to edit book issued to person 
 \n ---> ''') 
         if opt.lower() == 'p':
             choicn=input("\nEnter name of person you wanna edit phone number of : ")
