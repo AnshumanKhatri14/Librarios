@@ -7,7 +7,6 @@ from funcs import *
 db = mysql.connector.connect(host="localhost",
                             user=usern,
                             passwd=pwd,
-                            database="Librarios",
                             auth_plugin="mysql_native_password"
                             )
 
@@ -19,6 +18,8 @@ mycursor.execute("CREATE DATABASE IF NOT EXISTS Librarios")
 
 mycursor.execute("CREATE TABLE IF NOT EXISTS library (id int PRIMARY KEY AUTO_INCREMENT,"
                 "issued_on datetime NOT NULL, name varchar(40), book varchar(50), phone_no int(15) UNSIGNED )")
+
+mycursor.execute("Use Librarios")
 
 if db.is_connected():
     print("\nConnected to database successfully...")
