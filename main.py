@@ -31,11 +31,14 @@ else:
 greet()
 
 def men():
-    inp=input("\nEnter 'm' for menu or press enter to exit program : ")
-    if inp.lower() == 'm':
+    inp= input("\nPress enter for menu or enter 'x' to exit program : ")
+    if inp.lower() == 'x':
+        exit()
+    elif inp == "":
         gen()
     else:
-        exit()
+        print("\nPlease Enter a valid choice \n")
+        men()
 
 # MAIN FUNCTION
 
@@ -80,8 +83,8 @@ Enter the number corresponding to action you want to perform :
             mycursor.execute(f'''SELECT EXISTS(SELECT * FROM library WHERE name="{choicn}")''')
             for x in mycursor:               
                 if x == (0,):
-                    print("\nTry entering a valid name...\n")
-                    exit()
+                    print("\nTry entering a valid name...")
+                    men()
                 else:
                     pass
             mycursor.execute(sel_phno%(choicn))
@@ -94,13 +97,13 @@ Enter the number corresponding to action you want to perform :
             mycursor.execute(f'''SELECT EXISTS(SELECT * FROM library WHERE name="{choicn}")''')
             for x in mycursor:               
                 if x == (0,):
-                    print("\nTry entering a valid name...\n")
-                    exit()
+                    print("\nTry entering a valid name...")
+                    men()
                 else:
                     pass
             mycursor.execute(sel_book%(choicn))
             for x in mycursor:
-                print(f'The book issued to {choicn} is : ',x[0])
+                print(f'\nThe book issued to {choicn} is : ',x[0])
                 men()
         else:
             men()   
@@ -116,8 +119,8 @@ Enter the number corresponding to action you want to perform :
             mycursor.execute(f'''SELECT EXISTS(SELECT * FROM library WHERE name="{choicn}")''')
             for x in mycursor:               
                 if x == (0,):
-                    print("\nTry entering a valid name...\n")
-                    exit()
+                    print("\nTry entering a valid name...")
+                    men()
                 else:
                     pass
             phno=input("\nEnter the new phone number : ")
@@ -132,8 +135,8 @@ Enter the number corresponding to action you want to perform :
             mycursor.execute(f'''SELECT EXISTS(SELECT * FROM library WHERE name="{choicn}")''')
             for x in mycursor:               
                 if x == (0,):
-                    print("\nTry entering a valid name...\n")
-                    exit()                   
+                    print("\nTry entering a valid name...")
+                    men()                   
                 else:
                     pass
             book=input("\nEnter the new book's name : ")
