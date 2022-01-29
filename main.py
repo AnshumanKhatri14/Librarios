@@ -8,7 +8,7 @@ db = mysql.connector.connect(host="localhost",
                             user=usern,
                             passwd=pwd,
                             database="Librarios",
-                            auth_plugin = "mysql_native_password"
+                            auth_plugin="mysql_native_password"
                             )
 
 mycursor=db.cursor()
