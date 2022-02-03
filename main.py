@@ -2,7 +2,7 @@ import mysql.connector
 from datetime import datetime
 
 from funcs import *
-
+ 
 # CONNECTION
 db = mysql.connector.connect(host="localhost",
                             user=usern,
@@ -14,9 +14,9 @@ mycursor=db.cursor()
 
 # CREATING ENVIRONMENT
 
-mycursor.execute("CREATE DATABASE IF NOT EXISTS Librarios")
+mycursor.execute("CREATE DATABASE IF NOT EXISTS librarios")
 
-mycursor.execute("Use Librarios")
+mycursor.execute("Use librarios")
 
 mycursor.execute("CREATE TABLE IF NOT EXISTS library (id int PRIMARY KEY AUTO_INCREMENT,"
                 "issued_on datetime NOT NULL, name varchar(40), book varchar(50), phone_no int(15) UNSIGNED )")
@@ -33,6 +33,7 @@ greet()
 def men():
     inp= input("\nPress enter for menu or enter 'x' to exit program : ")
     if inp.lower() == 'x':
+        print("\n   ")
         exit()
     elif inp == "":
         gen()
@@ -78,6 +79,7 @@ Enter the number corresponding to action you want to perform :
                      \nEnter 'b' to view book issued to person
 \n ---> ''')
 
+
         if opt.lower( ) == 'p':
             choicn=input("\nEnter name of person you wanna view phone number of : ")
             mycursor.execute(f'''SELECT EXISTS(SELECT * FROM library WHERE name="{choicn}")''')
@@ -113,7 +115,7 @@ Enter the number corresponding to action you want to perform :
     elif act == '3':
         opt=input('''\nEnter 'p' to edit phone number of person 
                      \nEnter 'b' to edit book issued to person 
-\n ---> ''') 
+\n ---> ''')
         if opt.lower() == 'p':
             choicn=input("\nEnter name of person you wanna edit phone number of : ")
             mycursor.execute(f'''SELECT EXISTS(SELECT * FROM library WHERE name="{choicn}")''')
@@ -129,7 +131,6 @@ Enter the number corresponding to action you want to perform :
             print("\nChanges saved succesfully ! \n")
             men()
 
-
         elif opt.lower() == 'b':
             choicn=input("\nEnter name of person you wanna edit book issued to : ")
             mycursor.execute(f'''SELECT EXISTS(SELECT * FROM library WHERE name="{choicn}")''')
@@ -139,12 +140,13 @@ Enter the number corresponding to action you want to perform :
                     men()                   
                 else:
                     pass
-            book=input("\nEnter the new book's name : ")
+            book=input("\nEnter title of the new book : ")
             mycursor.execute(updt_book%(book,choicn))
             db.commit()
             print("\nChanges saved succesfully ! \n")
             men()
         else:
+            print("\nTry entering a valid option...")
             men()     
     
     # Deleting data
