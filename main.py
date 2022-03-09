@@ -157,13 +157,14 @@ Enter the number corresponding to action you want to perform :
         for x in mycursor:               
             if x == (0,):
                 print("\nTry entering a valid name...\n")
-                exit()
+                men()
             else:
                 pass
         mycursor.execute("DELETE FROM library WHERE name='%s'"%(choicn))
+        db.commit()
         print("\nEntry deleted successfully ! \n")
         men()
-    
+
     # Exiting program
 
     elif act == '0':
