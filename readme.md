@@ -31,7 +31,28 @@ git clone https://github.com/AnshumanKhatri14/Librarios.git
 ```
 <br/>
 
-Just copy out this in your terminal and use it to its fullest!
+Just copy out this in your terminal and explore it to its fullest!
+
+## OR
+
+You can simply install this project as a module by a single command from your terminal :
+
+```
+pip install librarios 
+``` 
+<br/>
+
+and in order to run the installed project as a pip package type this command in your terminal :
+```
+py -m librarios
+```
+<br/>
+
+for linux / mac OS >
+```
+python3 -m librarios 
+```
+
 
 
 
