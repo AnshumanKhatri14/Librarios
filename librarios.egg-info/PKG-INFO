@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: librarios
+Version: 0.6
+Summary: A Library Management Program on python And MySQL
+Home-page: https://github.com/AnshumanKhatri14/Librarios
+Author: Anshuman
+Author-email: <anshumankhatri2004@gmail.com>
+License: MIT
+Description: UNKNOWN
+Keywords: python,mysql
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent

@@ -49,7 +49,7 @@ py -m librarios
 <br/>
 
 for linux / mac OS >
-```
+``` 
 python3 -m librarios 
 ```
 

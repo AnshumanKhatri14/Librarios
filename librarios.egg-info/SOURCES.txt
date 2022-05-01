@@ -1,0 +1,11 @@
+README.md
+setup.py
+librarios/__init__.py
+librarios/funcs.py
+librarios/main.py
+librarios.egg-info/PKG-INFO
+librarios.egg-info/SOURCES.txt
+librarios.egg-info/dependency_links.txt
+librarios.egg-info/entry_points.txt
+librarios.egg-info/requires.txt
+librarios.egg-info/top_level.txt
